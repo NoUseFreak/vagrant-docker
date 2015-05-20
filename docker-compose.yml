@@ -1,0 +1,6 @@
+web:
+  image: nginx
+  ports:
+    - "80:80"
+  volumes:
+    - /vagrant:/usr/share/nginx/html
