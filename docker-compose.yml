@@ -1,6 +1,11 @@
 web:
-  image: nginx
+  build: docker/web
   ports:
     - "80:80"
   volumes:
-    - /vagrant:/usr/share/nginx/html
+    - .:/var/www/html:rw
+  links:
+    - redis:redis
+
+redis:
+  image: redis
